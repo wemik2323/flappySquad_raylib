@@ -150,6 +150,13 @@ int main() {
 
                 BeginDrawing();
                 ClearBackground(RAYWHITE);
+                DrawRectangle(bird.position.x, bird.position.y, bird.size.x, bird.size.y, ORANGE);
+                for (int i = 0; i < pipeContainer.size(); i++) {
+                    DrawRectangle(pipeContainer[i].botTopPosition.x, pipeContainer[i].botTopPosition.y, pipeContainer[i].botTopSize.x, pipeContainer[i].botTopSize.y, pipeContainer[i].color);
+                    DrawRectangle(pipeContainer[i].botPipePosition.x, pipeContainer[i].botPipePosition.y, pipeContainer[i].botPipeSize.x, pipeContainer[i].botPipeSize.y, pipeContainer[i].color);
+                    DrawRectangle(pipeContainer[i].topTopPosition.x, pipeContainer[i].topTopPosition.y, pipeContainer[i].topTopSize.x, pipeContainer[i].topTopSize.y, pipeContainer[i].color);
+                    DrawRectangle(pipeContainer[i].topPipePosition.x, pipeContainer[i].topPipePosition.y, pipeContainer[i].topPipeSize.x, pipeContainer[i].topPipeSize.y, pipeContainer[i].color);
+                }
                 DrawText("GAME OVER", screenWidth/2 - 100, screenHeight/2 - 20, 30, ORANGE);
                 DrawText("Press Space or Enter to try again", screenWidth/2 - 130, screenHeight/2 + 20, 20, BLACK);
                 DrawText(TextFormat("Your score: %i", score), screenWidth/2 - 50, screenHeight/2 + 60, 20, RED);
